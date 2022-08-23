@@ -2,9 +2,9 @@ FROM alpine:3.14.3
 
 LABEL org.opencontainers.image.title="dns3l smallstep RA"
 LABEL org.opencontainers.image.description="A smallstep ACME RA for DNS3L"
-LABEL org.opencontainers.image.version=0.0.0
+LABEL org.opencontainers.image.version=1.0.0
 
-ENV VERSION=0.0.0
+ENV VERSION=1.0.0
 
 ENV PAGER=less
 
