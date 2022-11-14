@@ -1,4 +1,4 @@
-FROM alpine:3.14.3
+FROM alpine:3.16.3
 
 LABEL org.opencontainers.image.title="dns3l smallstep RA"
 LABEL org.opencontainers.image.description="A smallstep ACME RA for DNS3L"
