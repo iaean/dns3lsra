@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dns3l/sra/compare/v1.0.0...v1.0.1) (2022-11-17)
+
+
+### Bug Fixes
+
+* Add dockerize ([#5](https://github.com/dns3l/sra/issues/5)) ([2ee3bb4](https://github.com/dns3l/sra/commit/2ee3bb45b97cdc23fad835ba65b01efbf52a230f))
+
 # 1.0.0 (2022-08-23)
 
 
