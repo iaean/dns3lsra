@@ -27,3 +27,5 @@
 | MARIADB_ROOT_PASSWORD | MariaDB root password | |
 
 If `ENVIRONMENT` is `! production` and `MARIADB_ROOT_PASSWORD` is set the database and user are created.
+
+Mount a custom step-ca config to `/etc/stepca.conf.json` if environment based template seems not sufficient.

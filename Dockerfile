@@ -1,4 +1,4 @@
-FROM alpine:3.14.3
+FROM alpine:3.16
 
 LABEL org.opencontainers.image.title="dns3l smallstep RA"
 LABEL org.opencontainers.image.description="A smallstep ACME RA for DNS3L"
@@ -53,15 +53,14 @@ RUN curl -fsSL https://github.com/smallstep/cli/releases/download/v${STEP_VERSIO
     chmod 0755 /usr/bin/step && \
     chmod 0755 /usr/bin/step-ca && \
     setcap CAP_NET_BIND_SERVICE=+eip /usr/bin/step-ca
-
-# Install Mo Mustache
+ 
+# Install dockerize
 #
-ENV MO_VERSION="2.2.0"
-RUN curl -fsSL https://github.com/tests-always-included/mo/archive/$MO_VERSION.tar.gz | \
-      tar -xO -zf- mo-$MO_VERSION/mo > /mo && \
-    chmod 0755 /mo
+ENV DCKRZ_VERSION="0.16.3"
+RUN _arch=${_arch/amd64/x86_64} && curl -fsSL https://github.com/powerman/dockerize/releases/download/v$DCKRZ_VERSION/dockerize-${_os}-${_arch}${_variant} > /dckrz && \
+    chmod a+x /dckrz
 
-COPY wait-for-it.sh /wait-for-it.sh
+COPY ca.json $STEPPATH/ca.json.tmpl
 COPY docker-entrypoint.sh /entrypoint.sh
 
 USER step
