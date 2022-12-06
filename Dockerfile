@@ -56,7 +56,7 @@ RUN curl -fsSL https://github.com/smallstep/cli/releases/download/v${STEP_VERSIO
  
 # Install dockerize
 #
-ENV DCKRZ_VERSION="0.16.3"
+ENV DCKRZ_VERSION="0.17.0"
 RUN _arch=${_arch/amd64/x86_64} && curl -fsSL https://github.com/powerman/dockerize/releases/download/v$DCKRZ_VERSION/dockerize-${_os}-${_arch}${_variant} > /dckrz && \
     chmod a+x /dckrz
 

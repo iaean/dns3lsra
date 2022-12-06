@@ -125,8 +125,9 @@ else
   /dckrz -template ${STEPPATH}/ca.json.tmpl:${STEPPATH}/config/ca.json
 fi
 
-/dckrz -wait ${STEP_CA_URL} -skip-tls-verify -wait-http-status-code 401 -timeout ${SERVICE_TIMEOUT} -- \
-  step ca bootstrap -f --ca-url ${STEP_CA_URL} --fingerprint ${STEP_CA_FINGERPRINT} # --install
+# Workaround for https://github.com/dns3l/sra/issues/7
+# /dckrz -wait ${STEP_CA_URL} -skip-tls-verify -wait-http-status-code 401 -timeout ${SERVICE_TIMEOUT} -- \
+step ca bootstrap -f --ca-url ${STEP_CA_URL} --fingerprint ${STEP_CA_FINGERPRINT} # --install
 
 /dckrz -wait tcp://${SRA_DB_HOST}:3306 -timeout ${SERVICE_TIMEOUT} -- echo "Ok. MariaDB is there."
 
