@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/dns3l/sra/compare/v1.0.1...v1.0.2) (2022-12-06)
+
+
+### Bug Fixes
+
+* workaround issue [#7](https://github.com/dns3l/sra/issues/7) ([#13](https://github.com/dns3l/sra/issues/13)) ([811a4dc](https://github.com/dns3l/sra/commit/811a4dc9092b22accddf739b51a9314329e9e222))
+
 ## [1.0.1](https://github.com/dns3l/sra/compare/v1.0.0...v1.0.1) (2022-11-17)
 
 
