@@ -82,7 +82,7 @@ jobs:
             type=semver,pattern={{version}},value=v${{ env.VERSION }}
       - name: Docker build and publish
         if: ${{ success() && steps.bump.outcome == 'failure' }}
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: .
           platforms: linux/amd64,linux/arm64
