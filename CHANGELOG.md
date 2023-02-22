@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/dns3l/sra/compare/v1.0.2...v1.0.3) (2023-02-22)
+
+
+### Bug Fixes
+
+* Configurable DSN resolver ([#21](https://github.com/dns3l/sra/issues/21)) ([49f66b3](https://github.com/dns3l/sra/commit/49f66b3fc0019dbc3d5bb25f65f2783d09417b44))
+
 ## [1.0.2](https://github.com/dns3l/sra/compare/v1.0.1...v1.0.2) (2022-12-06)
 
 
