@@ -24,6 +24,7 @@
 | SRA_DB_USER | database user | `acmera` |
 | SRA_DB_PASS | user password | random |
 | SRA_DB_HOST | MariaDB server IP/FQDN | `db` |
+| SRA_RESOLVER | Optional DNS resolver IP (1.2.3.4:53) | |
 | MARIADB_ROOT_PASSWORD | MariaDB root password | |
 
 If `ENVIRONMENT` is `! production` and `MARIADB_ROOT_PASSWORD` is set the database and user are created.

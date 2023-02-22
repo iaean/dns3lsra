@@ -51,6 +51,7 @@ echo Running: "$@"
 
 export SRA_BIND=${SRA_BIND:-":9443"}
 export SRA_DNS=${SRA_DNS:-'"localhost","sra","acmera"'}
+export SRA_RESOLVER=${SRA_RESOLVER:-""}
 
 export STEP_CA_URL=${STEP_CA_URL:-"https://stepca:9000"}
 export STEP_CA_FINGERPRINT=${STEP_CA_FINGERPRINT:-"foobar"}
@@ -132,9 +133,13 @@ step ca bootstrap -f --ca-url ${STEP_CA_URL} --fingerprint ${STEP_CA_FINGERPRINT
 /dckrz -wait tcp://${SRA_DB_HOST}:3306 -timeout ${SERVICE_TIMEOUT} -- echo "Ok. MariaDB is there."
 
 if [[ `basename ${1}` == "step-ca" ]]; then # prod
+  if [ -z "${SRA_RESOLVER}" ]; then
     exec "$@" </dev/null #>/dev/null 2>&1
+  else
+    exec "$@" --resolver ${SRA_RESOLVER} </dev/null #>/dev/null 2>&1
+  fi
 else # dev
-    step-ca ${STEPPATH}/config/ca.json --issuer-password-file ${STEPPATH}/.acme-ra.pass || true
+  step-ca ${STEPPATH}/config/ca.json --issuer-password-file ${STEPPATH}/.acme-ra.pass || true
 fi
 
 # fallthrough...
